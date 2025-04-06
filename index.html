@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Apartment in Italy</title>
+    <title>Carapartment - Inicio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/logo.png" />
+    <script>
+      // Script: Cambio de estilo en el header
+      function cambiarHeader() {
+        const header = document.querySelector("header");
+        header.style.background = "linear-gradient(90deg, #7B5D5E, #ACBA9D)";
+        header.style.transition = "background 0.5s ease";
+      }
+    </script>
   </head>
+
   <body>
     <header>
-      <h1>Welcome to My Apartment in Italy</h1>
+      <img src="img/logo.png" alt="Logo Carapartment" width="150px" />
+      <h1>Carapartment</h1>
+      <p>Mi casa es tu casa</p>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -18,27 +35,43 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <section>
-        <h2>Discover Your Perfect Stay</h2>
-        <p>
-          Experience the charm of Italy by staying in my cozy and modern
-          apartment. Located in the heart of the city, it’s the perfect place
-          for your vacation.
-        </p>
+        <h3>Personaliza tu experiencia</h3>
+        <button onclick="cambiarHeader()" class="btn">
+          Cambiar estilo del encabezado
+        </button>
       </section>
+
       <section>
-        <h2>Why Choose Us?</h2>
-        <ul>
-          <li>Prime location</li>
-          <li>Fully furnished</li>
-          <li>Affordable rates</li>
-          <li>Comfortable and spacious</li>
+        <h2>Descubre tu alojamiento ideal en Italia</h2>
+        <p>
+          Un espacio acogedor y moderno en Caramanga Piemonte, cerca de Turín.
+        </p>
+        <figure>
+          <img
+            src="img/apartamento.jpg"
+            alt="Foto del apartamento"
+            width="100%"
+          />
+          <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fro%2Fapartamente-lux-sya-residence.html&psig=AOvVaw1NzI3mdIP49CHJgyyWaXTn&ust=1744038274234000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMiF0YvXw4wDFQAAAAAdAAAAABAJ -->
+        </figure>
+      </section>
+
+      <section>
+        <h3>¿Por qué elegirnos?</h3>
+        <ul class="reason-list">
+          <li>Ubicación privilegiada</li>
+          <li>Totalmente amueblado</li>
+          <li>Tarifas accesibles</li>
+          <li>Espacioso y cómodo</li>
         </ul>
       </section>
     </main>
+
     <footer>
-      <p>&copy; 2023 My Apartment in Italy. All rights reserved.</p>
+      <p>&copy; 2025 Carapartment - Mi casa es tu casa</p>
     </footer>
   </body>
 </html>
