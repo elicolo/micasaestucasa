@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carapartment - Contacto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/logo.png" />
+  </head>
+  <body>
+    <header>
+      <img src="img/logo.png" alt="Logo Carapartment" />
+      <h1>Carapartment</h1>
+      <p>Mi casa es tu casa</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="form">
+        <h2>Consulta o reserva</h2>
+        <form id="consultaForm">
+          <label for="nombre">Nombre:</label><br />
+          <input type="text" id="nombre" name="nombre" /><br /><br />
+
+          <label for="email">Correo electrónico:</label><br />
+          <input type="email" id="email" name="email" /><br /><br />
+
+          <label for="tipo">Tipo de consulta:</label><br />
+          <select id="tipo" name="tipo">
+            <option value="">Selecciona una opción</option>
+            <option value="reserva">Reserva</option>
+            <option value="informacion">Información</option>
+            <option value="otro">Otro</option></select
+          ><br /><br />
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Mensaje de confirmación -->
+        <p
+          id="mensajeConfirmacion"
+          style="
+            display: none;
+            color: green;
+            font-size: 1.8em;
+            margin-top: 16px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #e3604d;
+          "
+        >
+          ¡Gracias por tu consulta! Te responderemos pronto.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Carapartment - Mi casa es tu casa</p>
+    </footer>
+
+    <script>
+      //Validación y mensaje del formulario
+      document
+        // busca el formulario por su ID
+        .getElementById("consultaForm")
+        // al evento "submit" del formulario le asigna una función
+        .addEventListener("submit", function (e) {
+          // previene el comportamiento por defecto del formulario
+          // y se puede gestionar de forma personalizada
+          e.preventDefault();
+
+          // recoge los valores de los campos del formulario
+          // .trim() elimina los espacios en blanco al principio y al final
+          const nombre = document.getElementById("nombre").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const tipo = document.getElementById("tipo").value;
+
+          // comprueba si los campos están vacíos
+          if (!nombre || !email || !tipo) {
+            alert("Por favor, completa todos los campos.");
+            return;
+          }
+          // muestra el mensaje de confirmación
+          document.getElementById("mensajeConfirmacion").style.display =
+            "block";
+          // resetea el formulario
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
